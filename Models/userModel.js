@@ -1,13 +1,8 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema(
+const registerSchema = new mongoose.Schema(
     {
-fname: {
-    type:String,
-    required:true,
-    trim:true,
-},
-lname: {
+fullName: {
     type:String,
     required:true,
     trim:true,
@@ -25,8 +20,28 @@ password: {
     maxLen: 15,
     trim:true,
 }, // encrypted password
+mobile: {
+    type:String,
+    required:true,
+    unique:true, 
+    trim:true,
+    //valid Indian mobile number
+}, 
+hobby:{
+    type:String,
+    required:true
+},
+gender:{
+    type:String,
+    required:true,
+    enum: ["male", "female"],
+},
+DOB: {
+    type: String,
+    required: true
+},
 },{ timestamps:true }
 
 )
 
-module.exports=mongoose.model("newUser", userSchema)
+module.exports=mongoose.model("register", registerSchema)

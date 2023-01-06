@@ -44,6 +44,21 @@ let isValidName=function(name){
     let regexPassword=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$/
     return regexPassword.test(password);
     }
+
+//==File Validation
+const isValidFile = function(files){
+    let imageRegex = /.*\.(jpeg|jpg|png)$/;
+    return imageRegex.test(files)
+}
+
+//*******************************************************************//
+
+//==Mobile Number Validation
+let isValidMobile = function (phone) {
+    let mobileRegex =/^[6-9]\d{9}$/;
+    return mobileRegex.test(phone); 
+}
+//**********************************************************************//
   
-module.exports = {isValidRequestBody,isValid, isValidObjectId, isValidEmail, isValidName, isValidPassword, }
+module.exports = {isValidRequestBody,isValid,isValidObjectId, isValidEmail,isValidName, isValidPassword, isValidFile,isValidMobile }
 
