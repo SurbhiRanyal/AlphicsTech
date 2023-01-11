@@ -1,11 +1,11 @@
 const express = require("express")
 const router = express.Router();
-const createlogin = require('../controller/loginController')
-const userLogin = require('../controller/userController')
+const {createlogin, updateProfile,getData} = require('../controller/userController')
 
 
-router.post('/login', createlogin)
-router.post('/loginuser', userLogin)
+router.post('/usertable', createlogin)
+router.put('/update/:_id/',updateProfile)
+router.get('/user/:_id/profile', getData)
 
 
 module.exports=router

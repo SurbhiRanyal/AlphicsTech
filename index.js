@@ -7,7 +7,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 
-mongoose.connect("mongodb+srv://AlphicsTech:alphicstech12345@cluster0.ageomo4.mongodb.net/?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://AlphicsTech:alphicstech12345@cluster0.ageomo4.mongodb.net/alphicsTech", {
       useNewUrlParser:true
 })
 .then(()=>console.log("Mongodb is connected"))
